@@ -1,0 +1,26 @@
+import React, { Component } from "react";
+
+class Counter extends Component {
+    constructor() {
+        super();
+        this.state = {number : 0}
+        this.clickHandler = this.clickHandler.bind(this)
+    }
+
+    clickHandler(){
+        this.setState(prevNum => {
+            return {number : prevNum.number + 1}
+        })
+    }
+
+    render() {
+        return(
+            <div>
+                <h1> {this.state.number} </h1>
+                <button onClick={this.clickHandler}> Click Me! </button>
+            </div>
+        )
+    }
+}
+
+export default Counter;
